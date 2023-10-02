@@ -1,6 +1,11 @@
 const express = require('express');
+const mongodb = require('mongodb');
 const router = express.Router();
 const bodyParser = require('body-parser');
+require('dotenv').config()
+
+const client = new mongodb.MongoClient(process.env.DATABASE_URL);
+
 const messages = [
   {
     text: "Hi there!",
